@@ -141,7 +141,11 @@ namespace jQueryUploadTest
                 context.Response.ContentType = "text/plain";
             }
 
-            var jsonObj = js.Serialize(statuses.ToArray());
+            filesUploaded theFiles = new filesUploaded();
+            theFiles.files = statuses;
+
+            var jsonObj = js.Serialize(theFiles);
+            //var jsonObj = js.Serialize(statuses.ToArray());
             context.Response.Write(jsonObj);
         }
 

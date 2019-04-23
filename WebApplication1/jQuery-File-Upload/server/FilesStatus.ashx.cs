@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace jQueryUploadTest
 {
@@ -34,5 +35,10 @@ namespace jQueryUploadTest
             delete_url = HandlerPath + "FileTransferHandler.ashx?f=" + fileName;
             delete_type = "DELETE";
         }
+    }
+
+    public class filesUploaded
+    {
+        public List<FilesStatus> files { get; set; }
     }
 }
